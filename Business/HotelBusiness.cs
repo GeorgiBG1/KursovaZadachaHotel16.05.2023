@@ -11,6 +11,7 @@ namespace KursovaHotel.Business
     public class HotelBusiness
     {
         private HotelDbContext dbContext = new HotelDbContext();
+        private List<Client> Clients = new List<Client>();
 
         public HotelBusiness()
         {
@@ -176,9 +177,9 @@ namespace KursovaHotel.Business
 
                 Room flat9 = new Room();
                 flat9.RoomNumber = 35;
-                flat9.Description = "Апартамент с пет кралски легла с гледка към морето, басейна, с бар, кухня с готварски прибори, с 4 бани, с 3 телевизора, с рутер в стаята, безплатен масаж, румсервиз, с три тераси, вътрешен басейн в една от баните.";
-                flat9.Price = 3000;
-                flat9.RoomTypeId = 3;
+                flat9.Description = "Апартамент с пет кралски легла с гледка към морето и басейна, с бар, кухня с готварски прибори, с 4 бани, с 3 телевизора, с рутер в стаята, безплатен масаж, румсервиз, с три тераси, вътрешен басейн в една от баните.";
+                flat9.Price = 5000;
+                flat9.RoomTypeId = 5;
                 dbContext.Rooms.Add(flat9);
                 #endregion
                 dbContext.SaveChanges();
@@ -188,26 +189,26 @@ namespace KursovaHotel.Business
         {
             MenuVariety menuVariety = new MenuVariety();
             menuVariety.Name = "VIP";
-            menuVariety.Description = "Напиши!";
-            menuVariety.Price = 0;//"Напиши!"
+            menuVariety.Description = "С тази услуга клиента може да яде специалитет, и да пие първокласни напитки.";
+            menuVariety.Price = 300;
             dbContext.MenuVarieties.Add(menuVariety);
 
             MenuVariety menuVariety2 = new MenuVariety();
             menuVariety2.Name = "All Inclusive";
-            menuVariety2.Description = "Напиши!";
-            menuVariety2.Price = 0;//"Напиши!"
+            menuVariety2.Description = "Тази услуга позволява клиента да се храни услуга блок маса и има безплатани напитки.";
+            menuVariety2.Price = 200;
             dbContext.MenuVarieties.Add(menuVariety2);
 
             MenuVariety menuVariety3 = new MenuVariety();
-            menuVariety3.Name = "Buffet"; //Блок маса
-            menuVariety3.Description = "Напиши! Без напитки!";
-            menuVariety3.Price = 0;//"Напиши!"
+            menuVariety3.Name = "Buffet"; 
+            menuVariety3.Description = "Клиентирте могат да се хранят каквото изкаст но без безплатни напитки";
+            menuVariety3.Price = 100;
             dbContext.MenuVarieties.Add(menuVariety3);
 
             MenuVariety menuVariety4 = new MenuVariety();
             menuVariety4.Name = "With menus";
-            menuVariety4.Description = "Напиши!";
-            menuVariety4.Price = 0;//"Напиши!"
+            menuVariety4.Description = "Даваме едно меню на клиента и им взимаме поръчките.";
+            menuVariety4.Price = 50;
             dbContext.MenuVarieties.Add(menuVariety4);
 
             dbContext.SaveChanges();
@@ -217,9 +218,11 @@ namespace KursovaHotel.Business
             dbContext.Reservations.Add(reservation);
             dbContext.SaveChanges();
         }
-        public void AddClients(List<Client> clients, Reservation reservation)
+        public void AddClient(Client newClient, Reservation reservation)
         {
-            foreach (var client in clients)
+            //Clients.Add(clients[0]); Da se prepravi osnovno!!!!!
+            var allClients = dbContext.Clients.ToList();
+            foreach (var client in allClients)
             {
                 if (client.ReservationId == reservation.Id)
                 {

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KursovaHotel.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20230522131408_1")]
+    [Migration("20230522173311_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
