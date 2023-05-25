@@ -218,22 +218,22 @@ namespace KursovaHotel.Business
             dbContext.Reservations.Add(reservation);
             dbContext.SaveChanges();
         }
-        public void AddClient(Client newClient, Reservation reservation)
+        public void AddClients(List<Client> clients, Reservation reservation)
         {
             //Clients.Add(clients[0]); Da se prepravi osnovno!!!!!
-            var allClients = dbContext.Clients.ToList();
-            foreach (var client in allClients)
-            {
-                if (client.ReservationId == reservation.Id)
-                {
-                    if (reservation.IsActive)
-                    {
-                        UpdateRoomsStatus(client);
-                        dbContext.Clients.Add(client);
-                    }
-                }
-            }
-            dbContext.SaveChanges();
+            var allClients = clients.ToList();
+            //foreach (var client in allClients)
+            //{
+            //    if (client.ReservationId == reservation.Id)
+            //    {
+            //        if (reservation.IsActive)
+            //        {
+            //            UpdateRoomsStatus(client);
+            //            dbContext.Clients.Add(client);
+            //        }
+            //    }
+            //}
+            //dbContext.SaveChanges();
         }
         public void UpdateRoomsStatus(Client client)
         {

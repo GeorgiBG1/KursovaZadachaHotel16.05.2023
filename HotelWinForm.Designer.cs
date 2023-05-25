@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblText = new System.Windows.Forms.Label();
             this.lblMiddleName = new System.Windows.Forms.Label();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
@@ -59,14 +58,6 @@
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblText
-            // 
-            this.lblText.BackColor = System.Drawing.SystemColors.Control;
-            this.lblText.Location = new System.Drawing.Point(111, 9);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(435, 617);
-            this.lblText.TabIndex = 23;
             // 
             // lblMiddleName
             // 
@@ -388,7 +379,6 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtBoxMiddleName);
             this.Controls.Add(this.lblMiddleName);
-            this.Controls.Add(this.lblText);
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "HotelWinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
@@ -400,7 +390,6 @@
         }
 
         #endregion
-        private Label lblText;
         private Label lblMiddleName;
         private TextBox txtBoxMiddleName;
         private Label lblLastName;
