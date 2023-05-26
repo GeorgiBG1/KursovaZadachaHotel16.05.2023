@@ -100,6 +100,7 @@ namespace KursovaHotel
         }
         private void UpdateCurrentClient()
         {
+            var a = 2;
             int.TryParse(txtBoxEGN.Text, out int egn);
             int.TryParse(txtBoxEGN.Text, out int phoneNumber);
             if (txtBoxFirstName.Text != Clients[clientCounter-1].FirstName
