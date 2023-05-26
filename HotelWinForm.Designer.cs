@@ -75,7 +75,6 @@
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(365, 23);
             this.txtBoxMiddleName.TabIndex = 27;
-            this.txtBoxMiddleName.TextChanged += new System.EventHandler(this.txtBoxMiddleName_TextChanged);
             // 
             // lblLastName
             // 
@@ -103,7 +102,6 @@
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(365, 23);
             this.txtBoxLastName.TabIndex = 30;
-            this.txtBoxLastName.TextChanged += new System.EventHandler(this.txtBoxLastName_TextChanged);
             // 
             // lblEGN
             // 
@@ -121,7 +119,6 @@
             this.txtBoxEGN.Name = "txtBoxEGN";
             this.txtBoxEGN.Size = new System.Drawing.Size(365, 23);
             this.txtBoxEGN.TabIndex = 32;
-            this.txtBoxEGN.TextChanged += new System.EventHandler(this.txtBoxEGN_TextChanged);
             // 
             // lblPhoneNumber
             // 
@@ -139,7 +136,6 @@
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
             this.txtBoxPhoneNumber.Size = new System.Drawing.Size(365, 23);
             this.txtBoxPhoneNumber.TabIndex = 34;
-            this.txtBoxPhoneNumber.TextChanged += new System.EventHandler(this.txtBoxPhoneNumber_TextChanged);
             // 
             // lblEmail
             // 
@@ -157,7 +153,6 @@
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(365, 23);
             this.txtBoxEmail.TabIndex = 36;
-            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
             // 
             // lblAge
             // 
@@ -312,7 +307,6 @@
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(365, 23);
             this.txtBoxFirstName.TabIndex = 56;
-            this.txtBoxFirstName.TextChanged += new System.EventHandler(this.txtBoxFirstName_TextChanged);
             // 
             // numUpDownAge
             // 
@@ -325,7 +319,6 @@
             this.numUpDownAge.Name = "numUpDownAge";
             this.numUpDownAge.Size = new System.Drawing.Size(54, 23);
             this.numUpDownAge.TabIndex = 57;
-            this.numUpDownAge.ValueChanged += new System.EventHandler(this.numUpDownAge_ValueChanged);
             // 
             // btnSelectMenus
             // 
