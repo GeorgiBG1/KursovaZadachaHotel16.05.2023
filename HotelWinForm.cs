@@ -8,48 +8,46 @@ namespace KursovaHotel
         private DateTime BookedOnDate;
         private DateTime ExpiredOnDate;
         private bool IsEnabled = false;
-        private Client Client = new Client();
+        private Client client = new Client();
         private Reservation Reservation = new Reservation();
-        private List<Client> Clients = new List<Client>();
+        public List<Client> Clients = new List<Client>();
         public HotelWinForm()
         {
             InitializeComponent();
         }
         private void txtBoxFirstName_TextChanged(object sender, EventArgs e)
         {
-            Client.FirstName = txtBoxFirstName.Text;
+
         }
 
         private void txtBoxMiddleName_TextChanged(object sender, EventArgs e)
         {
-            Client.MiddleName = txtBoxMiddleName.Text;
+
         }
 
         private void txtBoxLastName_TextChanged(object sender, EventArgs e)
         {
-            Client.SurName = txtBoxLastName.Text;
+
         }
 
         private void txtBoxEGN_TextChanged(object sender, EventArgs e)
         {
-            int.TryParse(txtBoxEGN.Text, out int egn);
-            Client.EGN = egn;
+
         }
 
         private void txtBoxPhoneNumber_TextChanged(object sender, EventArgs e)
         {
-            int.TryParse(txtBoxEGN.Text, out int phoneNumber);
-            Client.PhoneNumber = phoneNumber;
+
         }
 
         private void txtBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            Client.Email = txtBoxEmail.Text;
+
         }
 
         private void numUpDownAge_ValueChanged(object sender, EventArgs e)
         {
-            Client.Age = (int)numUpDownAge.Value;
+
         }
         private void radioBtnGroupRes_CheckedChanged(object sender, EventArgs e)
         {
@@ -110,18 +108,31 @@ namespace KursovaHotel
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (Clients.Count > 1)
+            {
 
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            AddNewClient();
             ResetRegistrationForm();
             radioBtnOneRes.Enabled = false;
-            AddNewClient();
         }
         private void AddNewClient()
         {
-            Clients.Add(Client);
+            client = new Client();
+            client.FirstName = txtBoxFirstName.Text;
+            client.MiddleName = txtBoxMiddleName.Text;
+            client.SurName = txtBoxLastName.Text;
+            int.TryParse(txtBoxEGN.Text, out int egn);
+            client.EGN = egn;
+            int.TryParse(txtBoxEGN.Text, out int phoneNumber);
+            client.PhoneNumber = phoneNumber;
+            client.Email = txtBoxEmail.Text;
+            client.Age = (int)numUpDownAge.Value;
+            Clients.Add(client);
             Reservation.IsActive = true;
         }
         private void ResetRegistrationForm()
@@ -141,4 +152,5 @@ namespace KursovaHotel
             //HotelBusiness.AddClients(Clients, Reservation);
         }
     }
+    
 }

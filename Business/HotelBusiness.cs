@@ -11,7 +11,7 @@ namespace KursovaHotel.Business
     public class HotelBusiness
     {
         private HotelDbContext dbContext = new HotelDbContext();
-        private List<Client> Clients = new List<Client>();
+        private List<Client> Customers = new List<Client>();
 
         public HotelBusiness()
         {
@@ -142,7 +142,7 @@ namespace KursovaHotel.Business
                 #region Floor 3
                 Room room9 = new Room();
                 room9.RoomNumber = 30;
-                room9.Description = "Стая в таванското помештение.";
+                room9.Description = "Стая в таванското помещение.";
                 room9.Price = 50;
                 room9.RoomTypeId = 1;
                 dbContext.Rooms.Add(room9);
@@ -220,20 +220,19 @@ namespace KursovaHotel.Business
         }
         public void AddClients(List<Client> clients, Reservation reservation)
         {
-            //Clients.Add(clients[0]); Da se prepravi osnovno!!!!!
             var allClients = clients.ToList();
-            //foreach (var client in allClients)
-            //{
-            //    if (client.ReservationId == reservation.Id)
-            //    {
-            //        if (reservation.IsActive)
-            //        {
-            //            UpdateRoomsStatus(client);
-            //            dbContext.Clients.Add(client);
-            //        }
-            //    }
-            //}
-            //dbContext.SaveChanges();
+            foreach (var client in allClients)
+            {
+                if (client.ReservationId == reservation.Id)
+                {
+                    if (reservation.IsActive)
+                    {
+                        UpdateRoomsStatus(client);
+                        dbContext.Clients.Add(client);
+                    }
+                }
+            }
+            dbContext.SaveChanges();
         }
         public void UpdateRoomsStatus(Client client)
         {
