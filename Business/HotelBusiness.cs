@@ -73,14 +73,14 @@ namespace KursovaHotel.Business
                 room3.Price = 100;
                 room3.RoomTypeId = 2;
                 dbContext.Add(room3);
-                
+
                 Room flat = new Room();
                 flat.RoomNumber = 13;
                 flat.Description = "Апартамент с кралско легло и две единични легла, с гледка към морето.";
                 flat.Price = 500;
                 flat.RoomTypeId = 2;
                 dbContext.Rooms.Add(flat);
-                
+
                 Room flat2 = new Room();
                 flat2.RoomNumber = 14;
                 flat2.Description = "Апартамент с гледка към морето и басейна с 2 кралски легла и 2 единични.";
@@ -94,7 +94,7 @@ namespace KursovaHotel.Business
                 flat3.Price = 1000;
                 flat3.RoomTypeId = 4;
                 dbContext.Add(flat3);
-                
+
                 #endregion
                 #region Floor 2
                 Room room4 = new Room();
@@ -200,7 +200,7 @@ namespace KursovaHotel.Business
             dbContext.MenuVarieties.Add(menuVariety2);
 
             MenuVariety menuVariety3 = new MenuVariety();
-            menuVariety3.Name = "Buffet"; 
+            menuVariety3.Name = "Buffet";
             menuVariety3.Description = "Клиентирте могат да се хранят каквото изкаст но без безплатни напитки";
             menuVariety3.Price = 100;
             dbContext.MenuVarieties.Add(menuVariety3);
@@ -218,19 +218,15 @@ namespace KursovaHotel.Business
             dbContext.Reservations.Add(reservation);
             dbContext.SaveChanges();
         }
-        public void AddClients(List<Client> clients, Reservation reservation)
+        public void AddClientsWithTheirReservation(List<Client> clients, Reservation reservation)
         {
-            var allClients = clients.ToList();
-            foreach (var client in allClients)
+            AddReservation(reservation);
+            var currentReservation = dbContext.Reservations.OrderBy(x=>x.Id).Last();
+            foreach (var client in clients)
             {
-                if (client.ReservationId == reservation.Id)
-                {
-                    if (reservation.IsActive)
-                    {
-                        UpdateRoomsStatus(client);
-                        dbContext.Clients.Add(client);
-                    }
-                }
+                client.ReservationId = currentReservation.Id;
+                //UpdateRoomsStatus(client);
+                dbContext.Clients.Add(client);
             }
             dbContext.SaveChanges();
         }
@@ -255,6 +251,7 @@ namespace KursovaHotel.Business
                 {
                     res.IsActive = false;
                 }
+                dbContext.SaveChanges();
             }
         }
         public List<Room> GetAllRooms()

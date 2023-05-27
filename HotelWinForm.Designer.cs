@@ -28,358 +28,354 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtBoxLastName = new System.Windows.Forms.TextBox();
-            this.lblEGN = new System.Windows.Forms.Label();
-            this.txtBoxEGN = new System.Windows.Forms.TextBox();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.txtBoxPhoneNumber = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtBoxEmail = new System.Windows.Forms.TextBox();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.btnBookedOn = new System.Windows.Forms.Button();
-            this.btnExpiredOn = new System.Windows.Forms.Button();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.btnSaveRes = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.radioBtnOneRes = new System.Windows.Forms.RadioButton();
-            this.radioBtnGroupRes = new System.Windows.Forms.RadioButton();
-            this.lblDuration = new System.Windows.Forms.Label();
-            this.btnSelectRoom = new System.Windows.Forms.Button();
-            this.lblDateStart = new System.Windows.Forms.Label();
-            this.lblDateEnd = new System.Windows.Forms.Label();
-            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
-            this.numUpDownAge = new System.Windows.Forms.NumericUpDown();
-            this.btnSelectMenus = new System.Windows.Forms.Button();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
-            this.SuspendLayout();
+            lblMiddleName = new Label();
+            txtBoxMiddleName = new TextBox();
+            lblLastName = new Label();
+            lblFirstName = new Label();
+            txtBoxLastName = new TextBox();
+            lblEGN = new Label();
+            txtBoxEGN = new TextBox();
+            lblPhoneNumber = new Label();
+            txtBoxPhoneNumber = new TextBox();
+            lblEmail = new Label();
+            txtBoxEmail = new TextBox();
+            lblAge = new Label();
+            btnBookedOn = new Button();
+            btnExpiredOn = new Button();
+            lblTotalPrice = new Label();
+            btnSaveRes = new Button();
+            btnBack = new Button();
+            btnNext = new Button();
+            radioBtnOneRes = new RadioButton();
+            radioBtnGroupRes = new RadioButton();
+            lblDuration = new Label();
+            btnSelectRoom = new Button();
+            lblDateStart = new Label();
+            lblDateEnd = new Label();
+            txtBoxFirstName = new TextBox();
+            numUpDownAge = new NumericUpDown();
+            btnSelectMenus = new Button();
+            monthCalendar = new MonthCalendar();
+            ((System.ComponentModel.ISupportInitialize)numUpDownAge).BeginInit();
+            SuspendLayout();
             // 
             // lblMiddleName
             // 
-            this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMiddleName.Location = new System.Drawing.Point(139, 69);
-            this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(365, 23);
-            this.lblMiddleName.TabIndex = 26;
-            this.lblMiddleName.Text = "Презиме на клиента";
-            this.lblMiddleName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblMiddleName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMiddleName.Location = new Point(139, 69);
+            lblMiddleName.Name = "lblMiddleName";
+            lblMiddleName.Size = new Size(365, 23);
+            lblMiddleName.TabIndex = 26;
+            lblMiddleName.Text = "Презиме на клиента";
+            lblMiddleName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBoxMiddleName
             // 
-            this.txtBoxMiddleName.Location = new System.Drawing.Point(139, 95);
-            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
-            this.txtBoxMiddleName.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxMiddleName.TabIndex = 27;
+            txtBoxMiddleName.Location = new Point(139, 95);
+            txtBoxMiddleName.Name = "txtBoxMiddleName";
+            txtBoxMiddleName.Size = new Size(365, 23);
+            txtBoxMiddleName.TabIndex = 27;
             // 
             // lblLastName
             // 
-            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLastName.Location = new System.Drawing.Point(139, 121);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(365, 23);
-            this.lblLastName.TabIndex = 28;
-            this.lblLastName.Text = "Фамилия на клиента";
-            this.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblLastName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblLastName.Location = new Point(139, 121);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(365, 23);
+            lblLastName.TabIndex = 28;
+            lblLastName.Text = "Фамилия на клиента";
+            lblLastName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblFirstName
             // 
-            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFirstName.Location = new System.Drawing.Point(139, 20);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(365, 23);
-            this.lblFirstName.TabIndex = 29;
-            this.lblFirstName.Text = "Първо име на клиента";
-            this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblFirstName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFirstName.Location = new Point(139, 20);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new Size(365, 23);
+            lblFirstName.TabIndex = 29;
+            lblFirstName.Text = "Първо име на клиента";
+            lblFirstName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBoxLastName
             // 
-            this.txtBoxLastName.Location = new System.Drawing.Point(139, 147);
-            this.txtBoxLastName.Name = "txtBoxLastName";
-            this.txtBoxLastName.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxLastName.TabIndex = 30;
+            txtBoxLastName.Location = new Point(139, 147);
+            txtBoxLastName.Name = "txtBoxLastName";
+            txtBoxLastName.Size = new Size(365, 23);
+            txtBoxLastName.TabIndex = 30;
             // 
             // lblEGN
             // 
-            this.lblEGN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEGN.Location = new System.Drawing.Point(139, 173);
-            this.lblEGN.Name = "lblEGN";
-            this.lblEGN.Size = new System.Drawing.Size(365, 23);
-            this.lblEGN.TabIndex = 31;
-            this.lblEGN.Text = "ЕГН на клиента";
-            this.lblEGN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblEGN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEGN.Location = new Point(139, 173);
+            lblEGN.Name = "lblEGN";
+            lblEGN.Size = new Size(365, 23);
+            lblEGN.TabIndex = 31;
+            lblEGN.Text = "ЕГН на клиента";
+            lblEGN.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBoxEGN
             // 
-            this.txtBoxEGN.Location = new System.Drawing.Point(139, 200);
-            this.txtBoxEGN.Name = "txtBoxEGN";
-            this.txtBoxEGN.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxEGN.TabIndex = 32;
+            txtBoxEGN.Location = new Point(139, 200);
+            txtBoxEGN.Name = "txtBoxEGN";
+            txtBoxEGN.Size = new Size(365, 23);
+            txtBoxEGN.TabIndex = 32;
             // 
             // lblPhoneNumber
             // 
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPhoneNumber.Location = new System.Drawing.Point(139, 226);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(365, 23);
-            this.lblPhoneNumber.TabIndex = 33;
-            this.lblPhoneNumber.Text = "Телефонен номер на клиента";
-            this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPhoneNumber.Location = new Point(139, 226);
+            lblPhoneNumber.Name = "lblPhoneNumber";
+            lblPhoneNumber.Size = new Size(365, 23);
+            lblPhoneNumber.TabIndex = 33;
+            lblPhoneNumber.Text = "Телефонен номер на клиента";
+            lblPhoneNumber.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBoxPhoneNumber
             // 
-            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(139, 252);
-            this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
-            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxPhoneNumber.TabIndex = 34;
+            txtBoxPhoneNumber.Location = new Point(139, 252);
+            txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
+            txtBoxPhoneNumber.Size = new Size(365, 23);
+            txtBoxPhoneNumber.TabIndex = 34;
             // 
             // lblEmail
             // 
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(139, 278);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(365, 23);
-            this.lblEmail.TabIndex = 35;
-            this.lblEmail.Text = "Имейл адрес";
-            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEmail.Location = new Point(139, 278);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(365, 23);
+            lblEmail.TabIndex = 35;
+            lblEmail.Text = "Имейл адрес";
+            lblEmail.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(139, 304);
-            this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxEmail.TabIndex = 36;
+            txtBoxEmail.Location = new Point(139, 304);
+            txtBoxEmail.Name = "txtBoxEmail";
+            txtBoxEmail.Size = new Size(365, 23);
+            txtBoxEmail.TabIndex = 36;
             // 
             // lblAge
             // 
-            this.lblAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAge.Location = new System.Drawing.Point(137, 330);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(170, 23);
-            this.lblAge.TabIndex = 38;
-            this.lblAge.Text = "Възраст на клиента";
-            this.lblAge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblAge.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAge.Location = new Point(137, 330);
+            lblAge.Name = "lblAge";
+            lblAge.Size = new Size(170, 23);
+            lblAge.TabIndex = 38;
+            lblAge.Text = "Възраст на клиента";
+            lblAge.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnBookedOn
             // 
-            this.btnBookedOn.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBookedOn.Location = new System.Drawing.Point(139, 443);
-            this.btnBookedOn.Name = "btnBookedOn";
-            this.btnBookedOn.Size = new System.Drawing.Size(170, 23);
-            this.btnBookedOn.TabIndex = 40;
-            this.btnBookedOn.Text = "Пристигане";
-            this.btnBookedOn.UseVisualStyleBackColor = false;
-            this.btnBookedOn.Click += new System.EventHandler(this.btnBookedOn_Click);
+            btnBookedOn.BackColor = SystemColors.Control;
+            btnBookedOn.Enabled = false;
+            btnBookedOn.Location = new Point(139, 443);
+            btnBookedOn.Name = "btnBookedOn";
+            btnBookedOn.Size = new Size(170, 23);
+            btnBookedOn.TabIndex = 40;
+            btnBookedOn.Text = "Дата на пристигане";
+            btnBookedOn.UseVisualStyleBackColor = false;
+            btnBookedOn.Click += btnBookedOn_Click;
             // 
             // btnExpiredOn
             // 
-            this.btnExpiredOn.Location = new System.Drawing.Point(329, 443);
-            this.btnExpiredOn.Name = "btnExpiredOn";
-            this.btnExpiredOn.Size = new System.Drawing.Size(175, 23);
-            this.btnExpiredOn.TabIndex = 41;
-            this.btnExpiredOn.Text = "Заминаване";
-            this.btnExpiredOn.UseVisualStyleBackColor = true;
-            this.btnExpiredOn.Click += new System.EventHandler(this.btnExpiredOn_Click);
+            btnExpiredOn.Location = new Point(329, 443);
+            btnExpiredOn.Name = "btnExpiredOn";
+            btnExpiredOn.Size = new Size(175, 23);
+            btnExpiredOn.TabIndex = 41;
+            btnExpiredOn.Text = "Дата на заминаване";
+            btnExpiredOn.UseVisualStyleBackColor = true;
+            btnExpiredOn.Click += btnExpiredOn_Click;
             // 
             // lblTotalPrice
             // 
-            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.Location = new System.Drawing.Point(137, 489);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(106, 29);
-            this.lblTotalPrice.TabIndex = 43;
-            this.lblTotalPrice.Text = "Обща Цена:";
-            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblTotalPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotalPrice.Location = new Point(137, 489);
+            lblTotalPrice.Margin = new Padding(2, 0, 2, 0);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(106, 29);
+            lblTotalPrice.TabIndex = 43;
+            lblTotalPrice.Text = "Обща Цена:";
+            lblTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnSaveRes
             // 
-            this.btnSaveRes.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSaveRes.Location = new System.Drawing.Point(405, 570);
-            this.btnSaveRes.Name = "btnSaveRes";
-            this.btnSaveRes.Size = new System.Drawing.Size(127, 43);
-            this.btnSaveRes.TabIndex = 47;
-            this.btnSaveRes.Text = "Завършване на регистрацията";
-            this.btnSaveRes.UseVisualStyleBackColor = false;
-            this.btnSaveRes.Click += new System.EventHandler(this.btnSaveRes_Click);
+            btnSaveRes.BackColor = SystemColors.Control;
+            btnSaveRes.Location = new Point(405, 570);
+            btnSaveRes.Name = "btnSaveRes";
+            btnSaveRes.Size = new Size(127, 43);
+            btnSaveRes.TabIndex = 47;
+            btnSaveRes.Text = "Завършване на регистрацията";
+            btnSaveRes.UseVisualStyleBackColor = false;
+            btnSaveRes.Click += btnSaveRes_Click;
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(128, 571);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(127, 42);
-            this.btnBack.TabIndex = 48;
-            this.btnBack.Text = "Назад";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Visible = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.BackColor = SystemColors.Control;
+            btnBack.Enabled = false;
+            btnBack.Location = new Point(128, 571);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(127, 42);
+            btnBack.TabIndex = 48;
+            btnBack.Text = "Назад";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
+            btnBack.Click += btnBack_Click;
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(261, 570);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(138, 43);
-            this.btnNext.TabIndex = 49;
-            this.btnNext.Text = "Следващ";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Visible = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            btnNext.BackColor = SystemColors.Control;
+            btnNext.Enabled = false;
+            btnNext.Location = new Point(261, 570);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(138, 43);
+            btnNext.TabIndex = 49;
+            btnNext.Text = "Следващ";
+            btnNext.UseVisualStyleBackColor = false;
+            btnNext.Visible = false;
+            btnNext.Click += btnNext_Click;
             // 
             // radioBtnOneRes
             // 
-            this.radioBtnOneRes.AutoSize = true;
-            this.radioBtnOneRes.Checked = true;
-            this.radioBtnOneRes.Location = new System.Drawing.Point(137, 521);
-            this.radioBtnOneRes.Name = "radioBtnOneRes";
-            this.radioBtnOneRes.Size = new System.Drawing.Size(150, 19);
-            this.radioBtnOneRes.TabIndex = 50;
-            this.radioBtnOneRes.TabStop = true;
-            this.radioBtnOneRes.Text = "Единична регистрация";
-            this.radioBtnOneRes.UseVisualStyleBackColor = true;
-            this.radioBtnOneRes.CheckedChanged += new System.EventHandler(this.radioBtnOneRes_CheckedChanged_1);
+            radioBtnOneRes.AutoSize = true;
+            radioBtnOneRes.Checked = true;
+            radioBtnOneRes.Location = new Point(137, 521);
+            radioBtnOneRes.Name = "radioBtnOneRes";
+            radioBtnOneRes.Size = new Size(150, 19);
+            radioBtnOneRes.TabIndex = 50;
+            radioBtnOneRes.TabStop = true;
+            radioBtnOneRes.Text = "Единична регистрация";
+            radioBtnOneRes.UseVisualStyleBackColor = true;
+            radioBtnOneRes.CheckedChanged += radioBtnOneRes_CheckedChanged_1;
             // 
             // radioBtnGroupRes
             // 
-            this.radioBtnGroupRes.AutoSize = true;
-            this.radioBtnGroupRes.Location = new System.Drawing.Point(137, 546);
-            this.radioBtnGroupRes.Name = "radioBtnGroupRes";
-            this.radioBtnGroupRes.Size = new System.Drawing.Size(142, 19);
-            this.radioBtnGroupRes.TabIndex = 51;
-            this.radioBtnGroupRes.Text = "Групова регистрация";
-            this.radioBtnGroupRes.UseVisualStyleBackColor = true;
-            this.radioBtnGroupRes.CheckedChanged += new System.EventHandler(this.radioBtnGroupRes_CheckedChanged);
+            radioBtnGroupRes.AutoSize = true;
+            radioBtnGroupRes.Location = new Point(137, 546);
+            radioBtnGroupRes.Name = "radioBtnGroupRes";
+            radioBtnGroupRes.Size = new Size(142, 19);
+            radioBtnGroupRes.TabIndex = 51;
+            radioBtnGroupRes.Text = "Групова регистрация";
+            radioBtnGroupRes.UseVisualStyleBackColor = true;
+            radioBtnGroupRes.CheckedChanged += radioBtnGroupRes_CheckedChanged;
             // 
             // lblDuration
             // 
-            this.lblDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDuration.Location = new System.Drawing.Point(137, 466);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(365, 23);
-            this.lblDuration.TabIndex = 52;
-            this.lblDuration.Text = "Продължителност на престоя: ";
-            this.lblDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblDuration.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDuration.Location = new Point(137, 466);
+            lblDuration.Name = "lblDuration";
+            lblDuration.Size = new Size(365, 23);
+            lblDuration.TabIndex = 52;
+            lblDuration.Text = "Продължителност на престоя: ";
+            lblDuration.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnSelectRoom
             // 
-            this.btnSelectRoom.Location = new System.Drawing.Point(137, 367);
-            this.btnSelectRoom.Name = "btnSelectRoom";
-            this.btnSelectRoom.Size = new System.Drawing.Size(155, 44);
-            this.btnSelectRoom.TabIndex = 53;
-            this.btnSelectRoom.Text = "Избери стая";
-            this.btnSelectRoom.UseVisualStyleBackColor = true;
+            btnSelectRoom.Location = new Point(137, 367);
+            btnSelectRoom.Name = "btnSelectRoom";
+            btnSelectRoom.Size = new Size(155, 44);
+            btnSelectRoom.TabIndex = 53;
+            btnSelectRoom.Text = "Избери стая";
+            btnSelectRoom.UseVisualStyleBackColor = true;
             // 
             // lblDateStart
             // 
-            this.lblDateStart.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDateStart.Enabled = false;
-            this.lblDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblDateStart.Location = new System.Drawing.Point(138, 414);
-            this.lblDateStart.Name = "lblDateStart";
-            this.lblDateStart.Size = new System.Drawing.Size(171, 26);
-            this.lblDateStart.TabIndex = 54;
-            this.lblDateStart.Text = "Дата 1";
-            this.lblDateStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDateStart.Visible = false;
+            lblDateStart.BackColor = SystemColors.Control;
+            lblDateStart.Enabled = false;
+            lblDateStart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblDateStart.Location = new Point(138, 414);
+            lblDateStart.Name = "lblDateStart";
+            lblDateStart.Size = new Size(171, 26);
+            lblDateStart.TabIndex = 54;
+            lblDateStart.Text = "Дата 1";
+            lblDateStart.TextAlign = ContentAlignment.MiddleLeft;
+            lblDateStart.Visible = false;
             // 
             // lblDateEnd
             // 
-            this.lblDateEnd.Enabled = false;
-            this.lblDateEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblDateEnd.Location = new System.Drawing.Point(329, 411);
-            this.lblDateEnd.Name = "lblDateEnd";
-            this.lblDateEnd.Size = new System.Drawing.Size(173, 26);
-            this.lblDateEnd.TabIndex = 55;
-            this.lblDateEnd.Text = "Дата 2";
-            this.lblDateEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDateEnd.Visible = false;
+            lblDateEnd.Enabled = false;
+            lblDateEnd.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblDateEnd.Location = new Point(329, 411);
+            lblDateEnd.Name = "lblDateEnd";
+            lblDateEnd.Size = new Size(173, 26);
+            lblDateEnd.TabIndex = 55;
+            lblDateEnd.Text = "Дата 2";
+            lblDateEnd.TextAlign = ContentAlignment.MiddleLeft;
+            lblDateEnd.Visible = false;
             // 
             // txtBoxFirstName
             // 
-            this.txtBoxFirstName.Location = new System.Drawing.Point(138, 46);
-            this.txtBoxFirstName.Name = "txtBoxFirstName";
-            this.txtBoxFirstName.Size = new System.Drawing.Size(365, 23);
-            this.txtBoxFirstName.TabIndex = 56;
+            txtBoxFirstName.Location = new Point(138, 46);
+            txtBoxFirstName.Name = "txtBoxFirstName";
+            txtBoxFirstName.Size = new Size(365, 23);
+            txtBoxFirstName.TabIndex = 56;
             // 
             // numUpDownAge
             // 
-            this.numUpDownAge.Location = new System.Drawing.Point(313, 334);
-            this.numUpDownAge.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.numUpDownAge.Name = "numUpDownAge";
-            this.numUpDownAge.Size = new System.Drawing.Size(54, 23);
-            this.numUpDownAge.TabIndex = 57;
+            numUpDownAge.Location = new Point(313, 334);
+            numUpDownAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numUpDownAge.Name = "numUpDownAge";
+            numUpDownAge.Size = new Size(54, 23);
+            numUpDownAge.TabIndex = 57;
             // 
             // btnSelectMenus
             // 
-            this.btnSelectMenus.Location = new System.Drawing.Point(329, 367);
-            this.btnSelectMenus.Name = "btnSelectMenus";
-            this.btnSelectMenus.Size = new System.Drawing.Size(155, 44);
-            this.btnSelectMenus.TabIndex = 58;
-            this.btnSelectMenus.Text = "Избери специална оферта";
-            this.btnSelectMenus.UseVisualStyleBackColor = true;
+            btnSelectMenus.Location = new Point(329, 367);
+            btnSelectMenus.Name = "btnSelectMenus";
+            btnSelectMenus.Size = new Size(155, 44);
+            btnSelectMenus.TabIndex = 58;
+            btnSelectMenus.Text = "Избери специална оферта";
+            btnSelectMenus.UseVisualStyleBackColor = true;
             // 
             // monthCalendar
             // 
-            this.monthCalendar.Enabled = false;
-            this.monthCalendar.Location = new System.Drawing.Point(541, 334);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 59;
-            this.monthCalendar.Visible = false;
-            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
+            monthCalendar.Enabled = false;
+            monthCalendar.Location = new Point(541, 334);
+            monthCalendar.Name = "monthCalendar";
+            monthCalendar.TabIndex = 59;
+            monthCalendar.Visible = false;
+            monthCalendar.DateChanged += monthCalendar_DateChanged;
             // 
             // HotelWinForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.monthCalendar);
-            this.Controls.Add(this.btnSelectMenus);
-            this.Controls.Add(this.numUpDownAge);
-            this.Controls.Add(this.txtBoxFirstName);
-            this.Controls.Add(this.lblDateEnd);
-            this.Controls.Add(this.lblDateStart);
-            this.Controls.Add(this.btnSelectRoom);
-            this.Controls.Add(this.lblDuration);
-            this.Controls.Add(this.radioBtnGroupRes);
-            this.Controls.Add(this.radioBtnOneRes);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnSaveRes);
-            this.Controls.Add(this.lblTotalPrice);
-            this.Controls.Add(this.btnExpiredOn);
-            this.Controls.Add(this.btnBookedOn);
-            this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtBoxPhoneNumber);
-            this.Controls.Add(this.lblPhoneNumber);
-            this.Controls.Add(this.txtBoxEGN);
-            this.Controls.Add(this.lblEGN);
-            this.Controls.Add(this.txtBoxLastName);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtBoxMiddleName);
-            this.Controls.Add(this.lblMiddleName);
-            this.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Name = "HotelWinForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "HotelArteApp";
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            ClientSize = new Size(1264, 681);
+            Controls.Add(monthCalendar);
+            Controls.Add(btnSelectMenus);
+            Controls.Add(numUpDownAge);
+            Controls.Add(txtBoxFirstName);
+            Controls.Add(lblDateEnd);
+            Controls.Add(lblDateStart);
+            Controls.Add(btnSelectRoom);
+            Controls.Add(lblDuration);
+            Controls.Add(radioBtnGroupRes);
+            Controls.Add(radioBtnOneRes);
+            Controls.Add(btnNext);
+            Controls.Add(btnBack);
+            Controls.Add(btnSaveRes);
+            Controls.Add(lblTotalPrice);
+            Controls.Add(btnExpiredOn);
+            Controls.Add(btnBookedOn);
+            Controls.Add(lblAge);
+            Controls.Add(txtBoxEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(txtBoxPhoneNumber);
+            Controls.Add(lblPhoneNumber);
+            Controls.Add(txtBoxEGN);
+            Controls.Add(lblEGN);
+            Controls.Add(txtBoxLastName);
+            Controls.Add(lblFirstName);
+            Controls.Add(lblLastName);
+            Controls.Add(txtBoxMiddleName);
+            Controls.Add(lblMiddleName);
+            ImeMode = ImeMode.Off;
+            Name = "HotelWinForm";
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
+            Text = "HotelArteApp";
+            ((System.ComponentModel.ISupportInitialize)numUpDownAge).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -7,9 +7,10 @@ namespace KursovaHotel
         private HotelBusiness HotelBusiness = new HotelBusiness();
         private DateTime BookedOnDate;
         private DateTime ExpiredOnDate;
-        private bool IsEnabled = false;
-        private int clientCounter = 0;
-        private Client client = new Client();
+        private bool IsEnabledbtnExpiredOn = false;
+        private bool IsAllowedAddClient = true;
+        private int clientIndex = 0;
+        private Client Client = new Client();
         private Reservation Reservation = new Reservation();
         public List<Client> Clients = new List<Client>();
         public HotelWinForm()
@@ -34,21 +35,21 @@ namespace KursovaHotel
 
         private void btnBookedOn_Click(object sender, EventArgs e)
         {
-            IsEnabled = false;
+            IsEnabledbtnExpiredOn = false;
             monthCalendar.Enabled = true;
             monthCalendar.Visible = true;
         }
 
         private void btnExpiredOn_Click(object sender, EventArgs e)
         {
-            IsEnabled = true;
+            IsEnabledbtnExpiredOn = true;
             monthCalendar.Enabled = true;
             monthCalendar.Visible = true;
         }
 
         private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            if (!IsEnabled)
+            if (!IsEnabledbtnExpiredOn)
             {
                 BookedOnDate = monthCalendar.SelectionRange.Start.Date;
                 if (BookedOnDate < ExpiredOnDate)
@@ -67,77 +68,93 @@ namespace KursovaHotel
                     lblDateEnd.Visible = true;
                     Reservation.ExpiredOn = ExpiredOnDate;
                 }
+                btnBookedOn.Enabled = true;
             }
             int durationInDays = Reservation.ExpiredOn.Day - Reservation.BookedOn.Day;
-            if (durationInDays > 0)
-            { lblDuration.Text = $"Продължителност на престоя: {durationInDays} дни"; }
+            if (durationInDays > 0 && Reservation.BookedOn.Year > 1)
+            { lblDuration.Text = $"Продължителност на престоя: {durationInDays} нощувки"; }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (clientCounter > 0)
+            if (clientIndex > 0)
             {
-                clientCounter--;
-                SelectPreviousClient();
+                clientIndex--;
+                SelectClient();
+                IsAllowedAddClient = false;
             }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (Clients.Count == clientCounter)
+            clientIndex++;
+            var nextClient = Clients.ElementAtOrDefault(clientIndex);
+            if (nextClient != null)
             {
-                AddNewClient();
-                ResetRegistrationForm();
-                clientCounter++;
+                UpdateCurrentClient(clientIndex - 1);
+                SelectClient();
+            }
+            else if (!IsAllowedAddClient)
+            {
+                UpdateCurrentClient(clientIndex - 1);
+                PartialResetRegistrationForm();
+                IsAllowedAddClient = true;
             }
             else
             {
-                clientCounter++;
-                txtBoxFirstName.Text = Clients[clientCounter-1].FirstName;
-                UpdateCurrentClient();
+                AddNewClient();
+                PartialResetRegistrationForm();
             }
             radioBtnOneRes.Enabled = false;
         }
-        private void UpdateCurrentClient()
+        private void UpdateCurrentClient(int index)
         {
-            var a = 2;
             int.TryParse(txtBoxEGN.Text, out int egn);
-            int.TryParse(txtBoxEGN.Text, out int phoneNumber);
-            if (txtBoxFirstName.Text != Clients[clientCounter-1].FirstName
-                || txtBoxMiddleName.Text != Clients[clientCounter-1].MiddleName
-                || txtBoxLastName.Text != Clients[clientCounter - 1].SurName
-                || egn != Clients[clientCounter - 1].EGN
-                || phoneNumber != Clients[clientCounter - 1].PhoneNumber
-                || txtBoxEmail.Text != Clients[clientCounter - 1].Email)
+            int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
+            if (txtBoxFirstName.Text != Clients[index].FirstName
+                || txtBoxMiddleName.Text != Clients[index].MiddleName
+                || txtBoxLastName.Text != Clients[index].SurName
+                || egn != Clients[index].EGN
+                || phoneNumber != Clients[index].PhoneNumber
+                || txtBoxEmail.Text != Clients[index].Email
+                || numUpDownAge.Value != Clients[index].Age)
             {
-                Clients[clientCounter - 1].FirstName = txtBoxFirstName.Text;
-                Clients[clientCounter - 1].MiddleName = txtBoxMiddleName.Text;
-                Clients[clientCounter - 1].SurName = txtBoxLastName.Text;
-                Clients[clientCounter - 1].Email = txtBoxEmail.Text;
-                Clients[clientCounter - 1].PhoneNumber = egn;
-                Clients[clientCounter - 1].PhoneNumber = phoneNumber;
+                Clients[index].FirstName = txtBoxFirstName.Text;
+                Clients[index].MiddleName = txtBoxMiddleName.Text;
+                Clients[index].SurName = txtBoxLastName.Text;
+                Clients[index].EGN = egn;
+                Clients[index].PhoneNumber = phoneNumber;
+                Clients[index].Email = txtBoxEmail.Text;
+                Clients[index].Age = (int)numUpDownAge.Value;
             }
         }
-        private void SelectPreviousClient()
+        private void SelectClient()
         {
-            txtBoxFirstName.Text = Clients[clientCounter].FirstName;
+            txtBoxFirstName.Text = Clients[clientIndex].FirstName;
+            txtBoxMiddleName.Text = Clients[clientIndex].MiddleName;
+            txtBoxLastName.Text = Clients[clientIndex].SurName;
+            txtBoxEGN.Text = Clients[clientIndex].EGN.ToString();
+            txtBoxPhoneNumber.Text = Clients[clientIndex].PhoneNumber.ToString();
+            txtBoxEmail.Text = Clients[clientIndex].Email;
+            numUpDownAge.Value = Clients[clientIndex].Age;
+
         }
         private void AddNewClient()
         {
-            client = new Client();
-            client.FirstName = txtBoxFirstName.Text;
-            client.MiddleName = txtBoxMiddleName.Text;
-            client.SurName = txtBoxLastName.Text;
+            Client = new Client();
+            Client.FirstName = txtBoxFirstName.Text;
+            Client.MiddleName = txtBoxMiddleName.Text;
+            Client.SurName = txtBoxLastName.Text;
             int.TryParse(txtBoxEGN.Text, out int egn);
-            client.EGN = egn;
-            int.TryParse(txtBoxEGN.Text, out int phoneNumber);
-            client.PhoneNumber = phoneNumber;
-            client.Email = txtBoxEmail.Text;
-            client.Age = (int)numUpDownAge.Value;
-            Clients.Add(client);
+            Client.EGN = egn;
+            int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
+            Client.PhoneNumber = phoneNumber;
+            Client.Email = txtBoxEmail.Text;
+            Client.Age = (int)numUpDownAge.Value;
+            Clients.Add(Client);
             Reservation.IsActive = true;
         }
-        private void ResetRegistrationForm()
+        private void PartialResetRegistrationForm()
         {
             radioBtnOneRes.Enabled = true;
             txtBoxFirstName.Text = "";
@@ -148,10 +165,45 @@ namespace KursovaHotel
             txtBoxEmail.Text = "";
             numUpDownAge.Value = 0;
         }
+        private void ResetRegistrationForm()
+        {
+            PartialResetRegistrationForm();
+            lblDateStart.Text = "";
+            lblDateEnd.Text = "";
+            lblDuration.Text = "Продължителност на престоя:";
+            btnBookedOn.Enabled = false;
+            monthCalendar.Enabled = false;
+            monthCalendar.Visible = false;
+            btnNext.Enabled = false;
+            btnBack.Enabled = false;
+            btnNext.Visible = false;
+            btnBack.Visible = false;
+            radioBtnGroupRes.Checked = false;
+            radioBtnOneRes.Checked = true;
+        }
         private void btnSaveRes_Click(object sender, EventArgs e)
         {
-            ResetRegistrationForm();
-            //HotelBusiness.AddClients(Clients, Reservation);
+            if (radioBtnOneRes.Checked)
+            {
+                AddNewClient();
+                ResetRegistrationForm();
+                HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                BookedOnDate = new DateTime();
+                ExpiredOnDate = new DateTime();
+                Reservation = new Reservation();
+                Clients = new List<Client>();
+            }
+            else if (radioBtnGroupRes.Checked)
+            {
+                AddNewClient();
+                ResetRegistrationForm();
+                HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                BookedOnDate = new DateTime();
+                ExpiredOnDate = new DateTime();
+                Reservation = new Reservation();
+                Clients = new List<Client>();
+                clientIndex = 0;
+            }
         }
     }
 
