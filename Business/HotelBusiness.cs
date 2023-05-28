@@ -268,5 +268,10 @@ namespace KursovaHotel.Business
         {
             return dbContext.MenuVarieties.ToList();
         }
+        public void DeleteAll()
+        {
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+        }
     }
 }

@@ -56,7 +56,20 @@
             numUpDownAge = new NumericUpDown();
             btnSelectMenus = new Button();
             monthCalendar = new MonthCalendar();
+            btnDelAll = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            button3 = new Button();
+            label3 = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)numUpDownAge).BeginInit();
+            tabControl1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblMiddleName
@@ -276,6 +289,7 @@
             btnSelectRoom.TabIndex = 53;
             btnSelectRoom.Text = "Избери стая";
             btnSelectRoom.UseVisualStyleBackColor = true;
+            btnSelectRoom.Click += btnSelectRoom_Click;
             // 
             // lblDateStart
             // 
@@ -335,12 +349,147 @@
             monthCalendar.Visible = false;
             monthCalendar.DateChanged += monthCalendar_DateChanged;
             // 
+            // btnDelAll
+            // 
+            btnDelAll.Location = new Point(862, 12);
+            btnDelAll.Name = "btnDelAll";
+            btnDelAll.Size = new Size(81, 23);
+            btnDelAll.TabIndex = 60;
+            btnDelAll.Text = "Зачисти БД";
+            btnDelAll.UseVisualStyleBackColor = true;
+            btnDelAll.Click += btnDelAll_Click;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(543, 200);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(357, 122);
+            tabControl1.TabIndex = 63;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(349, 94);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(349, 94);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = SystemColors.ActiveCaption;
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
+            tableLayoutPanel1.ColumnCount = 7;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 47F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel1.Controls.Add(button3, 3, 0);
+            tableLayoutPanel1.Controls.Add(label3, 0, 2);
+            tableLayoutPanel1.Controls.Add(button2, 1, 0);
+            tableLayoutPanel1.Controls.Add(button1, 2, 0);
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Enabled = false;
+            tableLayoutPanel1.Location = new Point(541, 46);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 41F));
+            tableLayoutPanel1.Size = new Size(359, 124);
+            tableLayoutPanel1.TabIndex = 64;
+            tableLayoutPanel1.Visible = false;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(156, 2);
+            button3.Margin = new Padding(0);
+            button3.Name = "button3";
+            button3.Size = new Size(52, 36);
+            button3.TabIndex = 65;
+            button3.Text = "Стая 3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.AppWorkspace;
+            label3.Location = new Point(2, 81);
+            label3.Margin = new Padding(0);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 41);
+            label3.TabIndex = 65;
+            label3.Text = "Етаж 3";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(54, 2);
+            button2.Margin = new Padding(0);
+            button2.Name = "button2";
+            button2.Size = new Size(49, 36);
+            button2.TabIndex = 1;
+            button2.Text = "Стая 1";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(105, 2);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(49, 36);
+            button1.TabIndex = 0;
+            button1.Text = "Стая 2";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.BackColor = SystemColors.AppWorkspace;
+            label1.Location = new Point(2, 2);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 36);
+            label1.TabIndex = 2;
+            label1.Text = "Етаж 1";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.AppWorkspace;
+            label2.Location = new Point(2, 40);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 39);
+            label2.TabIndex = 3;
+            label2.Text = "Етаж 2";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // HotelWinForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(1264, 681);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tabControl1);
+            Controls.Add(btnDelAll);
             Controls.Add(monthCalendar);
             Controls.Add(btnSelectMenus);
             Controls.Add(numUpDownAge);
@@ -374,6 +523,8 @@
             StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "HotelArteApp";
             ((System.ComponentModel.ISupportInitialize)numUpDownAge).EndInit();
+            tabControl1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -407,5 +558,16 @@
         private NumericUpDown numUpDownAge;
         private Button btnSelectMenus;
         private MonthCalendar monthCalendar;
+        private Button btnDelAll;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button button1;
+        private Button button2;
+        private Label label3;
+        private Label label1;
+        private Label label2;
+        private Button button3;
     }
 }

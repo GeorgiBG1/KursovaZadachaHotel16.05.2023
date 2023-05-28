@@ -109,34 +109,40 @@ namespace KursovaHotel
         }
         private void UpdateCurrentClient(int index)
         {
-            int.TryParse(txtBoxEGN.Text, out int egn);
-            int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
-            if (txtBoxFirstName.Text != Clients[index].FirstName
-                || txtBoxMiddleName.Text != Clients[index].MiddleName
-                || txtBoxLastName.Text != Clients[index].SurName
-                || egn != Clients[index].EGN
-                || phoneNumber != Clients[index].PhoneNumber
-                || txtBoxEmail.Text != Clients[index].Email
-                || numUpDownAge.Value != Clients[index].Age)
+            if (Clients.Any())
             {
-                Clients[index].FirstName = txtBoxFirstName.Text;
-                Clients[index].MiddleName = txtBoxMiddleName.Text;
-                Clients[index].SurName = txtBoxLastName.Text;
-                Clients[index].EGN = egn;
-                Clients[index].PhoneNumber = phoneNumber;
-                Clients[index].Email = txtBoxEmail.Text;
-                Clients[index].Age = (int)numUpDownAge.Value;
+                int.TryParse(txtBoxEGN.Text, out int egn);
+                int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
+                if (txtBoxFirstName.Text != Clients[index].FirstName
+                    || txtBoxMiddleName.Text != Clients[index].MiddleName
+                    || txtBoxLastName.Text != Clients[index].SurName
+                    || egn != Clients[index].EGN
+                    || phoneNumber != Clients[index].PhoneNumber
+                    || txtBoxEmail.Text != Clients[index].Email
+                    || numUpDownAge.Value != Clients[index].Age)
+                {
+                    Clients[index].FirstName = txtBoxFirstName.Text;
+                    Clients[index].MiddleName = txtBoxMiddleName.Text;
+                    Clients[index].SurName = txtBoxLastName.Text;
+                    Clients[index].EGN = egn;
+                    Clients[index].PhoneNumber = phoneNumber;
+                    Clients[index].Email = txtBoxEmail.Text;
+                    Clients[index].Age = (int)numUpDownAge.Value;
+                }
             }
         }
         private void SelectClient()
         {
-            txtBoxFirstName.Text = Clients[clientIndex].FirstName;
-            txtBoxMiddleName.Text = Clients[clientIndex].MiddleName;
-            txtBoxLastName.Text = Clients[clientIndex].SurName;
-            txtBoxEGN.Text = Clients[clientIndex].EGN.ToString();
-            txtBoxPhoneNumber.Text = Clients[clientIndex].PhoneNumber.ToString();
-            txtBoxEmail.Text = Clients[clientIndex].Email;
-            numUpDownAge.Value = Clients[clientIndex].Age;
+            if (Clients.Any())
+            {
+                txtBoxFirstName.Text = Clients[clientIndex].FirstName;
+                txtBoxMiddleName.Text = Clients[clientIndex].MiddleName;
+                txtBoxLastName.Text = Clients[clientIndex].SurName;
+                txtBoxEGN.Text = Clients[clientIndex].EGN.ToString();
+                txtBoxPhoneNumber.Text = Clients[clientIndex].PhoneNumber.ToString();
+                txtBoxEmail.Text = Clients[clientIndex].Email;
+                numUpDownAge.Value = Clients[clientIndex].Age;
+            }
 
         }
         private void AddNewClient()
@@ -204,6 +210,17 @@ namespace KursovaHotel
                 Clients = new List<Client>();
                 clientIndex = 0;
             }
+        }
+
+        private void btnDelAll_Click(object sender, EventArgs e)
+        {
+            HotelBusiness.DeleteAll();
+        }
+
+        private void btnSelectRoom_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Enabled = true;
+            tableLayoutPanel1.Visible = true;
         }
     }
 
