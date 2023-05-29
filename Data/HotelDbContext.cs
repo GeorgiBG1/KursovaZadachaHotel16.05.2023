@@ -12,7 +12,7 @@ namespace KursovaHotel.Data
     {
         public HotelDbContext()
         {
-            this.Database.EnsureCreated();
+            //this.Database.EnsureCreated();
         }
 
         public DbSet<Room> Rooms { get; set; }
@@ -20,12 +20,15 @@ namespace KursovaHotel.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<MenuVariety> MenuVarieties { get; set; }
+        public DbSet<MenuOption> MenuOptions { get; set; }
+        public DbSet<MenuDate> MenuDates { get; set; }
+        public DbSet<Menu> Menus { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-FII733Q\\SQLEXPRESS;Database=HotelDB;" +
+                optionsBuilder.UseSqlServer("Server=.;Database=HotelDB;" +
                     "Integrated Security=true;TrustServerCertificate=true;");
             }
         }

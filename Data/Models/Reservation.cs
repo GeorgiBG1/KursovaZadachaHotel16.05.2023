@@ -14,8 +14,7 @@ namespace KursovaHotel.Data.Models
         public DateTime ExpiredOn { get; set; }
         public virtual int Duration => BookedOn.Day + ExpiredOn.Day;
         public virtual ICollection<Client>? Clients { get; set; }
-        public int MenuId { get; set; }
-        public virtual ICollection<MenuVariety>? MenuVarieties { get; set; } 
+        public virtual ICollection<Menu>? Menus { get; set; }
         public decimal Price { get; set; }
         public bool IsActive { get; set; }
     }

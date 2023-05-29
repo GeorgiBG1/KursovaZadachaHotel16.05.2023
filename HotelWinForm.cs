@@ -111,21 +111,19 @@ namespace KursovaHotel
         {
             if (Clients.Any())
             {
-                int.TryParse(txtBoxEGN.Text, out int egn);
-                int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
                 if (txtBoxFirstName.Text != Clients[index].FirstName
                     || txtBoxMiddleName.Text != Clients[index].MiddleName
                     || txtBoxLastName.Text != Clients[index].SurName
-                    || egn != Clients[index].EGN
-                    || phoneNumber != Clients[index].PhoneNumber
+                    || txtBoxEGN.Text != Clients[index].EGN
+                    || txtBoxPhoneNumber.Text != Clients[index].PhoneNumber
                     || txtBoxEmail.Text != Clients[index].Email
                     || numUpDownAge.Value != Clients[index].Age)
                 {
                     Clients[index].FirstName = txtBoxFirstName.Text;
                     Clients[index].MiddleName = txtBoxMiddleName.Text;
                     Clients[index].SurName = txtBoxLastName.Text;
-                    Clients[index].EGN = egn;
-                    Clients[index].PhoneNumber = phoneNumber;
+                    Clients[index].EGN = txtBoxEGN.Text;
+                    Clients[index].PhoneNumber = txtBoxPhoneNumber.Text;
                     Clients[index].Email = txtBoxEmail.Text;
                     Clients[index].Age = (int)numUpDownAge.Value;
                 }
@@ -138,8 +136,8 @@ namespace KursovaHotel
                 txtBoxFirstName.Text = Clients[clientIndex].FirstName;
                 txtBoxMiddleName.Text = Clients[clientIndex].MiddleName;
                 txtBoxLastName.Text = Clients[clientIndex].SurName;
-                txtBoxEGN.Text = Clients[clientIndex].EGN.ToString();
-                txtBoxPhoneNumber.Text = Clients[clientIndex].PhoneNumber.ToString();
+                txtBoxEGN.Text = Clients[clientIndex].EGN;
+                txtBoxPhoneNumber.Text = Clients[clientIndex].PhoneNumber;
                 txtBoxEmail.Text = Clients[clientIndex].Email;
                 numUpDownAge.Value = Clients[clientIndex].Age;
             }
@@ -151,10 +149,8 @@ namespace KursovaHotel
             Client.FirstName = txtBoxFirstName.Text;
             Client.MiddleName = txtBoxMiddleName.Text;
             Client.SurName = txtBoxLastName.Text;
-            int.TryParse(txtBoxEGN.Text, out int egn);
-            Client.EGN = egn;
-            int.TryParse(txtBoxPhoneNumber.Text, out int phoneNumber);
-            Client.PhoneNumber = phoneNumber;
+            Client.EGN = txtBoxEGN.Text;
+            Client.PhoneNumber = txtBoxPhoneNumber.Text;
             Client.Email = txtBoxEmail.Text;
             Client.Age = (int)numUpDownAge.Value;
             Clients.Add(Client);

@@ -13,13 +13,14 @@ namespace KursovaHotel.Data.Models
         public string? FirstName { get; set; }
         public string? MiddleName { get; set; }
         public string? SurName { get; set; }
-        public int EGN { get; set; }
+        public string? EGN { get; set; }
         public int Age { get; set; }
         public string? Email { get; set; }
-        public int PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
         [ForeignKey("Reservation")]
         public int ReservationId { get; set; }
         [ForeignKey("Room")]
         public int RoomId { get; set; }
+        public virtual ICollection<Room>? Rooms { get; set; }
     }
 }

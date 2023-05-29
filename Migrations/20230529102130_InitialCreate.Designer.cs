@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KursovaHotel.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20230522173311_1")]
-    partial class _1
+    [Migration("20230529102130_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,21 @@ namespace KursovaHotel.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("ClientRoom", b =>
+                {
+                    b.Property<int>("ClientsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ClientsId", "RoomsId");
+
+                    b.HasIndex("RoomsId");
+
+                    b.ToTable("ClientRoom");
+                });
 
             modelBuilder.Entity("KursovaHotel.Data.Models.Client", b =>
                 {
@@ -35,8 +50,8 @@ namespace KursovaHotel.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("EGN")
-                        .HasColumnType("int");
+                    b.Property<string>("EGN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -47,8 +62,8 @@ namespace KursovaHotel.Migrations
                     b.Property<string>("MiddleName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ReservationId")
                         .HasColumnType("int");
@@ -66,6 +81,76 @@ namespace KursovaHotel.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("KursovaHotel.Data.Models.Menu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("MenuDateId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MenuOptionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MenuVarietyId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ReservationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Menus");
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuDate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("MenuDates");
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("MenuId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("MenuOptions");
+                });
+
             modelBuilder.Entity("KursovaHotel.Data.Models.MenuVariety", b =>
                 {
                     b.Property<int>("Id")
@@ -77,18 +162,15 @@ namespace KursovaHotel.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("MenuId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("ReservationId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ReservationId");
+                    b.HasIndex("MenuId");
 
                     b.ToTable("MenuVarieties");
                 });
@@ -110,9 +192,6 @@ namespace KursovaHotel.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MenuId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -128,6 +207,9 @@ namespace KursovaHotel.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -170,6 +252,36 @@ namespace KursovaHotel.Migrations
                     b.ToTable("RoomTypes");
                 });
 
+            modelBuilder.Entity("MenuReservation", b =>
+                {
+                    b.Property<int>("MenusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReservationsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MenusId", "ReservationsId");
+
+                    b.HasIndex("ReservationsId");
+
+                    b.ToTable("MenuReservation");
+                });
+
+            modelBuilder.Entity("ClientRoom", b =>
+                {
+                    b.HasOne("KursovaHotel.Data.Models.Client", null)
+                        .WithMany()
+                        .HasForeignKey("ClientsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KursovaHotel.Data.Models.Room", null)
+                        .WithMany()
+                        .HasForeignKey("RoomsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("KursovaHotel.Data.Models.Client", b =>
                 {
                     b.HasOne("KursovaHotel.Data.Models.Reservation", null)
@@ -179,11 +291,25 @@ namespace KursovaHotel.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuDate", b =>
+                {
+                    b.HasOne("KursovaHotel.Data.Models.Menu", null)
+                        .WithMany("MenuDates")
+                        .HasForeignKey("MenuId");
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuOption", b =>
+                {
+                    b.HasOne("KursovaHotel.Data.Models.Menu", null)
+                        .WithMany("MenuOptions")
+                        .HasForeignKey("MenuId");
+                });
+
             modelBuilder.Entity("KursovaHotel.Data.Models.MenuVariety", b =>
                 {
-                    b.HasOne("KursovaHotel.Data.Models.Reservation", null)
+                    b.HasOne("KursovaHotel.Data.Models.Menu", null)
                         .WithMany("MenuVarieties")
-                        .HasForeignKey("ReservationId");
+                        .HasForeignKey("MenuId");
                 });
 
             modelBuilder.Entity("KursovaHotel.Data.Models.RoomType", b =>
@@ -193,11 +319,33 @@ namespace KursovaHotel.Migrations
                         .HasForeignKey("RoomId");
                 });
 
+            modelBuilder.Entity("MenuReservation", b =>
+                {
+                    b.HasOne("KursovaHotel.Data.Models.Menu", null)
+                        .WithMany()
+                        .HasForeignKey("MenusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KursovaHotel.Data.Models.Reservation", null)
+                        .WithMany()
+                        .HasForeignKey("ReservationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.Menu", b =>
+                {
+                    b.Navigation("MenuDates");
+
+                    b.Navigation("MenuOptions");
+
+                    b.Navigation("MenuVarieties");
+                });
+
             modelBuilder.Entity("KursovaHotel.Data.Models.Reservation", b =>
                 {
                     b.Navigation("Clients");
-
-                    b.Navigation("MenuVarieties");
                 });
 
             modelBuilder.Entity("KursovaHotel.Data.Models.Room", b =>

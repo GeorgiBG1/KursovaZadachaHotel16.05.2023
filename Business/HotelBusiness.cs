@@ -190,27 +190,48 @@ namespace KursovaHotel.Business
             MenuVariety menuVariety = new MenuVariety();
             menuVariety.Name = "VIP";
             menuVariety.Description = "С тази услуга клиента може да яде специалитет, и да пие първокласни напитки.";
-            menuVariety.Price = 300;
             dbContext.MenuVarieties.Add(menuVariety);
 
             MenuVariety menuVariety2 = new MenuVariety();
             menuVariety2.Name = "All Inclusive";
             menuVariety2.Description = "Тази услуга позволява клиента да се храни услуга блок маса и има безплатани напитки.";
-            menuVariety2.Price = 200;
             dbContext.MenuVarieties.Add(menuVariety2);
 
             MenuVariety menuVariety3 = new MenuVariety();
             menuVariety3.Name = "Buffet";
-            menuVariety3.Description = "Клиентирте могат да се хранят каквото изкаст но без безплатни напитки";
-            menuVariety3.Price = 100;
+            menuVariety3.Description = "Клиентирте могат да се хранят каквото искат но без безплатни напитки";
             dbContext.MenuVarieties.Add(menuVariety3);
 
             MenuVariety menuVariety4 = new MenuVariety();
             menuVariety4.Name = "With menus";
             menuVariety4.Description = "Даваме едно меню на клиента и им взимаме поръчките.";
-            menuVariety4.Price = 50;
             dbContext.MenuVarieties.Add(menuVariety4);
 
+            dbContext.SaveChanges();
+        }
+        public void AddMenuOptions()
+        {
+            MenuOption menuOption = new MenuOption();
+            menuOption.Type = "Breakfast";
+            dbContext.MenuOptions.Add(menuOption);
+            MenuOption menuOption2 = new MenuOption();
+            menuOption2.Type = "Breakfast + Lunch";
+            dbContext.MenuOptions.Add(menuOption2);
+            MenuOption menuOption3 = new MenuOption();
+            menuOption3.Type = "Lunch";
+            dbContext.MenuOptions.Add(menuOption3);
+            MenuOption menuOption4 = new MenuOption();
+            menuOption4.Type = "Lunch + Dinner";
+            dbContext.MenuOptions.Add(menuOption4);
+            MenuOption menuOption5 = new MenuOption();
+            menuOption5.Type = "Dinner";
+            dbContext.MenuOptions.Add(menuOption5);
+            MenuOption menuOption6 = new MenuOption();
+            menuOption6.Type = "Dinner + Breakfast";
+            dbContext.MenuOptions.Add(menuOption6);
+            MenuOption menuOption7 = new MenuOption();
+            menuOption7.Type = "Breakfast + Lunch + Dinner";
+            dbContext.MenuOptions.Add(menuOption7);
             dbContext.SaveChanges();
         }
         public void AddReservation(Reservation reservation)

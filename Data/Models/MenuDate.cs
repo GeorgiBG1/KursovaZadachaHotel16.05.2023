@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace KursovaHotel.Data.Models
 {
-    public class MenuVariety
+    public class MenuDate
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
+        public DateTime Date { get; set; }
     }
 }
