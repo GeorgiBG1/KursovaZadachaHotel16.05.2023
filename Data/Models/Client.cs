@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace KursovaHotel.Data.Models
         [ForeignKey("Reservation")]
         public int ReservationId { get; set; }
         [ForeignKey("Room")]
+        [Required]
         public int RoomId { get; set; }
         public virtual ICollection<Room>? Rooms { get; set; }
     }

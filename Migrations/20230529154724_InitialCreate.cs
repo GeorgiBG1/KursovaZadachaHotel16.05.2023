@@ -17,9 +17,9 @@ namespace KursovaHotel.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MenuVarietyId = table.Column<int>(type: "int", nullable: false),
                     MenuOptionId = table.Column<int>(type: "int", nullable: false),
-                    MenuDateId = table.Column<int>(type: "int", nullable: false),
                     ReservationId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,43 +40,6 @@ namespace KursovaHotel.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reservations", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Rooms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoomNumber = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    RoomTypeId = table.Column<int>(type: "int", nullable: false),
-                    ClientId = table.Column<int>(type: "int", nullable: false),
-                    IsBooked = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Rooms", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MenuDates",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MenuId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MenuDates", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MenuDates_Menus_MenuId",
-                        column: x => x.MenuId,
-                        principalTable: "Menus",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -170,6 +133,29 @@ namespace KursovaHotel.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Rooms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoomNumber = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    RoomTypeId = table.Column<int>(type: "int", nullable: false),
+                    IsBooked = table.Column<bool>(type: "bit", nullable: false),
+                    ClientId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Rooms_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "RoomTypes",
                 columns: table => new
                 {
@@ -188,44 +174,10 @@ namespace KursovaHotel.Migrations
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ClientRoom",
-                columns: table => new
-                {
-                    ClientsId = table.Column<int>(type: "int", nullable: false),
-                    RoomsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClientRoom", x => new { x.ClientsId, x.RoomsId });
-                    table.ForeignKey(
-                        name: "FK_ClientRoom_Clients_ClientsId",
-                        column: x => x.ClientsId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClientRoom_Rooms_RoomsId",
-                        column: x => x.RoomsId,
-                        principalTable: "Rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ClientRoom_RoomsId",
-                table: "ClientRoom",
-                column: "RoomsId");
-
             migrationBuilder.CreateIndex(
                 name: "IX_Clients_ReservationId",
                 table: "Clients",
                 column: "ReservationId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MenuDates_MenuId",
-                table: "MenuDates",
-                column: "MenuId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MenuOptions_MenuId",
@@ -243,6 +195,11 @@ namespace KursovaHotel.Migrations
                 column: "MenuId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Rooms_ClientId",
+                table: "Rooms",
+                column: "ClientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RoomTypes_RoomId",
                 table: "RoomTypes",
                 column: "RoomId");
@@ -250,12 +207,6 @@ namespace KursovaHotel.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ClientRoom");
-
-            migrationBuilder.DropTable(
-                name: "MenuDates");
-
             migrationBuilder.DropTable(
                 name: "MenuOptions");
 
@@ -269,13 +220,13 @@ namespace KursovaHotel.Migrations
                 name: "RoomTypes");
 
             migrationBuilder.DropTable(
-                name: "Clients");
-
-            migrationBuilder.DropTable(
                 name: "Menus");
 
             migrationBuilder.DropTable(
                 name: "Rooms");
+
+            migrationBuilder.DropTable(
+                name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "Reservations");

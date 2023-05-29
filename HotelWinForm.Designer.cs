@@ -57,19 +57,36 @@
             btnSelectMenus = new Button();
             monthCalendar = new MonthCalendar();
             btnDelAll = new Button();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button3 = new Button();
-            label3 = new Label();
-            button2 = new Button();
-            button1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            tabControlMenu = new TabControl();
+            tabPageWithMenus = new TabPage();
+            tabPageBuffet = new TabPage();
+            tabPageALLIn = new TabPage();
+            tabPageVipMenu = new TabPage();
+            tableRooms = new TableLayoutPanel();
+            btnRoom35 = new Button();
+            btnRoom34 = new Button();
+            btnRoom33 = new Button();
+            btnRoom32 = new Button();
+            btnRoom31 = new Button();
+            btnRoom25 = new Button();
+            btnRoom24 = new Button();
+            btnRoom23 = new Button();
+            btnRoom22 = new Button();
+            btnRoom21 = new Button();
+            btnRoom20 = new Button();
+            btnRoom15 = new Button();
+            btnRoom14 = new Button();
+            btnRoom13 = new Button();
+            btnRoom12 = new Button();
+            lblFloor3 = new Label();
+            btnRoom10 = new Button();
+            btnRoom11 = new Button();
+            lblFloor1 = new Label();
+            lblFloor2 = new Label();
+            btnRoom30 = new Button();
             ((System.ComponentModel.ISupportInitialize)numUpDownAge).BeginInit();
-            tabControl1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
+            tabControlMenu.SuspendLayout();
+            tableRooms.SuspendLayout();
             SuspendLayout();
             // 
             // lblMiddleName
@@ -183,7 +200,7 @@
             btnBookedOn.Enabled = false;
             btnBookedOn.Location = new Point(139, 443);
             btnBookedOn.Name = "btnBookedOn";
-            btnBookedOn.Size = new Size(170, 23);
+            btnBookedOn.Size = new Size(175, 23);
             btnBookedOn.TabIndex = 40;
             btnBookedOn.Text = "Дата на пристигане";
             btnBookedOn.UseVisualStyleBackColor = false;
@@ -298,7 +315,7 @@
             lblDateStart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lblDateStart.Location = new Point(138, 414);
             lblDateStart.Name = "lblDateStart";
-            lblDateStart.Size = new Size(171, 26);
+            lblDateStart.Size = new Size(173, 26);
             lblDateStart.TabIndex = 54;
             lblDateStart.Text = "Дата 1";
             lblDateStart.TextAlign = ContentAlignment.MiddleLeft;
@@ -337,13 +354,14 @@
             btnSelectMenus.Name = "btnSelectMenus";
             btnSelectMenus.Size = new Size(155, 44);
             btnSelectMenus.TabIndex = 58;
-            btnSelectMenus.Text = "Избери специална оферта";
+            btnSelectMenus.Text = "Избери гозбата на мама";
             btnSelectMenus.UseVisualStyleBackColor = true;
+            btnSelectMenus.Click += btnSelectMenus_Click;
             // 
             // monthCalendar
             // 
             monthCalendar.Enabled = false;
-            monthCalendar.Location = new Point(541, 334);
+            monthCalendar.Location = new Point(543, 443);
             monthCalendar.Name = "monthCalendar";
             monthCalendar.TabIndex = 59;
             monthCalendar.Visible = false;
@@ -351,7 +369,7 @@
             // 
             // btnDelAll
             // 
-            btnDelAll.Location = new Point(862, 12);
+            btnDelAll.Location = new Point(819, 12);
             btnDelAll.Name = "btnDelAll";
             btnDelAll.Size = new Size(81, 23);
             btnDelAll.TabIndex = 60;
@@ -359,127 +377,316 @@
             btnDelAll.UseVisualStyleBackColor = true;
             btnDelAll.Click += btnDelAll_Click;
             // 
-            // tabControl1
+            // tabControlMenu
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(543, 200);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(357, 122);
-            tabControl1.TabIndex = 63;
+            tabControlMenu.Controls.Add(tabPageWithMenus);
+            tabControlMenu.Controls.Add(tabPageBuffet);
+            tabControlMenu.Controls.Add(tabPageALLIn);
+            tabControlMenu.Controls.Add(tabPageVipMenu);
+            tabControlMenu.Enabled = false;
+            tabControlMenu.Location = new Point(543, 173);
+            tabControlMenu.Name = "tabControlMenu";
+            tabControlMenu.SelectedIndex = 0;
+            tabControlMenu.Size = new Size(396, 258);
+            tabControlMenu.TabIndex = 63;
+            tabControlMenu.Visible = false;
             // 
-            // tabPage1
+            // tabPageWithMenus
             // 
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(349, 94);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPageWithMenus.Location = new Point(4, 24);
+            tabPageWithMenus.Name = "tabPageWithMenus";
+            tabPageWithMenus.Padding = new Padding(3);
+            tabPageWithMenus.Size = new Size(388, 230);
+            tabPageWithMenus.TabIndex = 0;
+            tabPageWithMenus.Text = "Обикновено меню";
+            tabPageWithMenus.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabPageBuffet
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(349, 94);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPageBuffet.Location = new Point(4, 24);
+            tabPageBuffet.Name = "tabPageBuffet";
+            tabPageBuffet.Padding = new Padding(3);
+            tabPageBuffet.Size = new Size(388, 230);
+            tabPageBuffet.TabIndex = 1;
+            tabPageBuffet.Text = "Блок маса";
+            tabPageBuffet.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // tabPageALLIn
             // 
-            tableLayoutPanel1.BackColor = SystemColors.ActiveCaption;
-            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
-            tableLayoutPanel1.ColumnCount = 7;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 49F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 49F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 47F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel1.Controls.Add(button3, 3, 0);
-            tableLayoutPanel1.Controls.Add(label3, 0, 2);
-            tableLayoutPanel1.Controls.Add(button2, 1, 0);
-            tableLayoutPanel1.Controls.Add(button1, 2, 0);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Enabled = false;
-            tableLayoutPanel1.Location = new Point(541, 46);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 41F));
-            tableLayoutPanel1.Size = new Size(359, 124);
-            tableLayoutPanel1.TabIndex = 64;
-            tableLayoutPanel1.Visible = false;
+            tabPageALLIn.Location = new Point(4, 24);
+            tabPageALLIn.Name = "tabPageALLIn";
+            tabPageALLIn.Padding = new Padding(3);
+            tabPageALLIn.Size = new Size(388, 230);
+            tabPageALLIn.TabIndex = 2;
+            tabPageALLIn.Text = "All Inclusive";
+            tabPageALLIn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // tabPageVipMenu
             // 
-            button3.Location = new Point(156, 2);
-            button3.Margin = new Padding(0);
-            button3.Name = "button3";
-            button3.Size = new Size(52, 36);
-            button3.TabIndex = 65;
-            button3.Text = "Стая 3";
-            button3.UseVisualStyleBackColor = true;
+            tabPageVipMenu.Location = new Point(4, 24);
+            tabPageVipMenu.Name = "tabPageVipMenu";
+            tabPageVipMenu.Padding = new Padding(3);
+            tabPageVipMenu.Size = new Size(388, 230);
+            tabPageVipMenu.TabIndex = 3;
+            tabPageVipMenu.Text = "VIP меню";
+            tabPageVipMenu.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // tableRooms
             // 
-            label3.BackColor = SystemColors.AppWorkspace;
-            label3.Location = new Point(2, 81);
-            label3.Margin = new Padding(0);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 41);
-            label3.TabIndex = 65;
-            label3.Text = "Етаж 3";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            tableRooms.BackColor = SystemColors.ActiveCaption;
+            tableRooms.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
+            tableRooms.ColumnCount = 7;
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
+            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 13F));
+            tableRooms.Controls.Add(btnRoom35, 6, 2);
+            tableRooms.Controls.Add(btnRoom34, 5, 2);
+            tableRooms.Controls.Add(btnRoom33, 4, 2);
+            tableRooms.Controls.Add(btnRoom32, 3, 2);
+            tableRooms.Controls.Add(btnRoom31, 2, 2);
+            tableRooms.Controls.Add(btnRoom25, 6, 1);
+            tableRooms.Controls.Add(btnRoom24, 5, 1);
+            tableRooms.Controls.Add(btnRoom23, 4, 1);
+            tableRooms.Controls.Add(btnRoom22, 3, 1);
+            tableRooms.Controls.Add(btnRoom21, 2, 1);
+            tableRooms.Controls.Add(btnRoom20, 1, 1);
+            tableRooms.Controls.Add(btnRoom15, 6, 0);
+            tableRooms.Controls.Add(btnRoom14, 5, 0);
+            tableRooms.Controls.Add(btnRoom13, 4, 0);
+            tableRooms.Controls.Add(btnRoom12, 3, 0);
+            tableRooms.Controls.Add(lblFloor3, 0, 2);
+            tableRooms.Controls.Add(btnRoom10, 1, 0);
+            tableRooms.Controls.Add(btnRoom11, 2, 0);
+            tableRooms.Controls.Add(lblFloor1, 0, 0);
+            tableRooms.Controls.Add(lblFloor2, 0, 1);
+            tableRooms.Controls.Add(btnRoom30, 1, 2);
+            tableRooms.Enabled = false;
+            tableRooms.Location = new Point(543, 46);
+            tableRooms.Name = "tableRooms";
+            tableRooms.RowCount = 3;
+            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableRooms.Size = new Size(396, 116);
+            tableRooms.TabIndex = 64;
+            tableRooms.Visible = false;
             // 
-            // button2
+            // btnRoom35
             // 
-            button2.Location = new Point(54, 2);
-            button2.Margin = new Padding(0);
-            button2.Name = "button2";
-            button2.Size = new Size(49, 36);
-            button2.TabIndex = 1;
-            button2.Text = "Стая 1";
-            button2.UseVisualStyleBackColor = true;
+            btnRoom35.Location = new Point(339, 78);
+            btnRoom35.Margin = new Padding(0);
+            btnRoom35.Name = "btnRoom35";
+            btnRoom35.Size = new Size(55, 36);
+            btnRoom35.TabIndex = 65;
+            btnRoom35.Text = "Ап 35";
+            btnRoom35.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRoom34
             // 
-            button1.Location = new Point(105, 2);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(49, 36);
-            button1.TabIndex = 0;
-            button1.Text = "Стая 2";
-            button1.UseVisualStyleBackColor = true;
+            btnRoom34.Location = new Point(282, 78);
+            btnRoom34.Margin = new Padding(0);
+            btnRoom34.Name = "btnRoom34";
+            btnRoom34.Size = new Size(55, 36);
+            btnRoom34.TabIndex = 65;
+            btnRoom34.Text = "Ап 34";
+            btnRoom34.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnRoom33
             // 
-            label1.BackColor = SystemColors.AppWorkspace;
-            label1.Location = new Point(2, 2);
-            label1.Margin = new Padding(0);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 36);
-            label1.TabIndex = 2;
-            label1.Text = "Етаж 1";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            btnRoom33.Location = new Point(225, 78);
+            btnRoom33.Margin = new Padding(0);
+            btnRoom33.Name = "btnRoom33";
+            btnRoom33.Size = new Size(55, 36);
+            btnRoom33.TabIndex = 65;
+            btnRoom33.Text = "Ап 33";
+            btnRoom33.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btnRoom32
             // 
-            label2.BackColor = SystemColors.AppWorkspace;
-            label2.Location = new Point(2, 40);
-            label2.Margin = new Padding(0);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 39);
-            label2.TabIndex = 3;
-            label2.Text = "Етаж 2";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            btnRoom32.Location = new Point(168, 78);
+            btnRoom32.Margin = new Padding(0);
+            btnRoom32.Name = "btnRoom32";
+            btnRoom32.Size = new Size(55, 36);
+            btnRoom32.TabIndex = 65;
+            btnRoom32.Text = "Ап 32";
+            btnRoom32.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom31
+            // 
+            btnRoom31.Location = new Point(111, 78);
+            btnRoom31.Margin = new Padding(0);
+            btnRoom31.Name = "btnRoom31";
+            btnRoom31.Size = new Size(55, 36);
+            btnRoom31.TabIndex = 65;
+            btnRoom31.Text = "Ап 31";
+            btnRoom31.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom25
+            // 
+            btnRoom25.Location = new Point(339, 40);
+            btnRoom25.Margin = new Padding(0);
+            btnRoom25.Name = "btnRoom25";
+            btnRoom25.Size = new Size(55, 36);
+            btnRoom25.TabIndex = 65;
+            btnRoom25.Text = "Ап 25";
+            btnRoom25.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom24
+            // 
+            btnRoom24.Location = new Point(282, 40);
+            btnRoom24.Margin = new Padding(0);
+            btnRoom24.Name = "btnRoom24";
+            btnRoom24.Size = new Size(55, 36);
+            btnRoom24.TabIndex = 65;
+            btnRoom24.Text = "Стая 24";
+            btnRoom24.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom23
+            // 
+            btnRoom23.Location = new Point(225, 40);
+            btnRoom23.Margin = new Padding(0);
+            btnRoom23.Name = "btnRoom23";
+            btnRoom23.Size = new Size(55, 36);
+            btnRoom23.TabIndex = 65;
+            btnRoom23.Text = "Стая 23";
+            btnRoom23.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom22
+            // 
+            btnRoom22.Location = new Point(168, 40);
+            btnRoom22.Margin = new Padding(0);
+            btnRoom22.Name = "btnRoom22";
+            btnRoom22.Size = new Size(55, 36);
+            btnRoom22.TabIndex = 65;
+            btnRoom22.Text = "Стая 22";
+            btnRoom22.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom21
+            // 
+            btnRoom21.Location = new Point(111, 40);
+            btnRoom21.Margin = new Padding(0);
+            btnRoom21.Name = "btnRoom21";
+            btnRoom21.Size = new Size(55, 36);
+            btnRoom21.TabIndex = 65;
+            btnRoom21.Text = "Стая 21";
+            btnRoom21.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom20
+            // 
+            btnRoom20.Location = new Point(54, 40);
+            btnRoom20.Margin = new Padding(0);
+            btnRoom20.Name = "btnRoom20";
+            btnRoom20.Size = new Size(55, 36);
+            btnRoom20.TabIndex = 65;
+            btnRoom20.Text = "Стая 20";
+            btnRoom20.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom15
+            // 
+            btnRoom15.Location = new Point(339, 2);
+            btnRoom15.Margin = new Padding(0);
+            btnRoom15.Name = "btnRoom15";
+            btnRoom15.Size = new Size(55, 36);
+            btnRoom15.TabIndex = 67;
+            btnRoom15.Text = "Ап 15";
+            btnRoom15.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom14
+            // 
+            btnRoom14.Location = new Point(282, 2);
+            btnRoom14.Margin = new Padding(0);
+            btnRoom14.Name = "btnRoom14";
+            btnRoom14.Size = new Size(55, 36);
+            btnRoom14.TabIndex = 67;
+            btnRoom14.Text = "Ап 14";
+            btnRoom14.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom13
+            // 
+            btnRoom13.Location = new Point(225, 2);
+            btnRoom13.Margin = new Padding(0);
+            btnRoom13.Name = "btnRoom13";
+            btnRoom13.Size = new Size(55, 36);
+            btnRoom13.TabIndex = 66;
+            btnRoom13.Text = "Ап 13";
+            btnRoom13.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom12
+            // 
+            btnRoom12.Location = new Point(168, 2);
+            btnRoom12.Margin = new Padding(0);
+            btnRoom12.Name = "btnRoom12";
+            btnRoom12.Size = new Size(55, 36);
+            btnRoom12.TabIndex = 65;
+            btnRoom12.Text = "Стая 12";
+            btnRoom12.UseVisualStyleBackColor = true;
+            // 
+            // lblFloor3
+            // 
+            lblFloor3.BackColor = SystemColors.AppWorkspace;
+            lblFloor3.Location = new Point(2, 78);
+            lblFloor3.Margin = new Padding(0);
+            lblFloor3.Name = "lblFloor3";
+            lblFloor3.Size = new Size(50, 36);
+            lblFloor3.TabIndex = 65;
+            lblFloor3.Text = "Етаж 3";
+            lblFloor3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnRoom10
+            // 
+            btnRoom10.Location = new Point(54, 2);
+            btnRoom10.Margin = new Padding(0);
+            btnRoom10.Name = "btnRoom10";
+            btnRoom10.Size = new Size(55, 36);
+            btnRoom10.TabIndex = 1;
+            btnRoom10.Text = "Стая 10";
+            btnRoom10.UseVisualStyleBackColor = true;
+            // 
+            // btnRoom11
+            // 
+            btnRoom11.Location = new Point(111, 2);
+            btnRoom11.Margin = new Padding(0);
+            btnRoom11.Name = "btnRoom11";
+            btnRoom11.Size = new Size(55, 36);
+            btnRoom11.TabIndex = 0;
+            btnRoom11.Text = "Стая 11";
+            btnRoom11.UseVisualStyleBackColor = true;
+            // 
+            // lblFloor1
+            // 
+            lblFloor1.BackColor = SystemColors.AppWorkspace;
+            lblFloor1.Location = new Point(2, 2);
+            lblFloor1.Margin = new Padding(0);
+            lblFloor1.Name = "lblFloor1";
+            lblFloor1.Size = new Size(50, 36);
+            lblFloor1.TabIndex = 2;
+            lblFloor1.Text = "Етаж 1";
+            lblFloor1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblFloor2
+            // 
+            lblFloor2.BackColor = SystemColors.AppWorkspace;
+            lblFloor2.Location = new Point(2, 40);
+            lblFloor2.Margin = new Padding(0);
+            lblFloor2.Name = "lblFloor2";
+            lblFloor2.Size = new Size(50, 36);
+            lblFloor2.TabIndex = 3;
+            lblFloor2.Text = "Етаж 2";
+            lblFloor2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnRoom30
+            // 
+            btnRoom30.Location = new Point(54, 78);
+            btnRoom30.Margin = new Padding(0);
+            btnRoom30.Name = "btnRoom30";
+            btnRoom30.Size = new Size(55, 36);
+            btnRoom30.TabIndex = 65;
+            btnRoom30.Text = "Стая 30";
+            btnRoom30.UseVisualStyleBackColor = true;
             // 
             // HotelWinForm
             // 
@@ -487,8 +694,8 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(1264, 681);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(tabControl1);
+            Controls.Add(tableRooms);
+            Controls.Add(tabControlMenu);
             Controls.Add(btnDelAll);
             Controls.Add(monthCalendar);
             Controls.Add(btnSelectMenus);
@@ -523,8 +730,8 @@
             StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "HotelArteApp";
             ((System.ComponentModel.ISupportInitialize)numUpDownAge).EndInit();
-            tabControl1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
+            tabControlMenu.ResumeLayout(false);
+            tableRooms.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -559,15 +766,32 @@
         private Button btnSelectMenus;
         private MonthCalendar monthCalendar;
         private Button btnDelAll;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
-        private Button button2;
-        private Label label3;
-        private Label label1;
-        private Label label2;
-        private Button button3;
+        private TabControl tabControlMenu;
+        private TabPage tabPageWithMenus;
+        private TabPage tabPageBuffet;
+        private TableLayoutPanel tableRooms;
+        private Button btnRoom11;
+        private Button btnRoom10;
+        private Label lblFloor3;
+        private Label lblFloor1;
+        private Label lblFloor2;
+        private Button btnRoom12;
+        private Button btnRoom15;
+        private Button btnRoom14;
+        private Button btnRoom13;
+        private Button btnRoom23;
+        private Button btnRoom22;
+        private Button btnRoom21;
+        private Button btnRoom20;
+        private Button btnRoom25;
+        private Button btnRoom24;
+        private Button btnRoom35;
+        private Button btnRoom34;
+        private Button btnRoom33;
+        private Button btnRoom32;
+        private Button btnRoom31;
+        private Button btnRoom30;
+        private TabPage tabPageALLIn;
+        private TabPage tabPageVipMenu;
     }
 }

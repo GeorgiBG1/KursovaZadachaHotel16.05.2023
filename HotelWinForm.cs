@@ -215,8 +215,14 @@ namespace KursovaHotel
 
         private void btnSelectRoom_Click(object sender, EventArgs e)
         {
-            tableLayoutPanel1.Enabled = true;
-            tableLayoutPanel1.Visible = true;
+            tableRooms.Enabled = true;
+            tableRooms.Visible = true;
+        }
+
+        private void btnSelectMenus_Click(object sender, EventArgs e)
+        {
+            tabControlMenu.Enabled = true;
+            tabControlMenu.Visible = true;
         }
     }
 

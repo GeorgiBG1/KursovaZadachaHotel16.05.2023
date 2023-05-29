@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,12 +17,10 @@ namespace KursovaHotel.Data.Models
         [ForeignKey("MenuOption")]
         public int MenuOptionId { get; set; }
         public virtual ICollection<MenuOption>? MenuOptions { get; set; }
-        [ForeignKey("MenuDate")]
-        public int MenuDateId { get; set; }
-        public virtual ICollection<MenuDate>? MenuDates { get; set; }
         [ForeignKey("Reservation")]
         public int ReservationId { get; set; }
         public virtual ICollection<Reservation>? Reservations { get; set; }
         public decimal Price { get; set; }
+        public DateTime Date { get; set; }
     }
 }

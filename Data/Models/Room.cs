@@ -16,9 +16,6 @@ namespace KursovaHotel.Data.Models
         public decimal Price { get; set; }
         public int RoomTypeId { get; set; }
         public virtual ICollection<RoomType>? RoomTypes { get; set; }
-        [ForeignKey("Client")]
-        public int ClientId { get; set; }
-        public virtual ICollection<Client>? Clients { get; set; }
         public bool IsBooked { get; set; }
     }
 }
