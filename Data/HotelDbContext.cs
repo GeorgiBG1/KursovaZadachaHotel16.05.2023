@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +13,8 @@ namespace KursovaHotel.Data
     {
         public HotelDbContext()
         {
-            //this.Database.EnsureCreated();
+            this.Database.EnsureCreated();
         }
-
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
@@ -27,7 +27,7 @@ namespace KursovaHotel.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-FII733Q\\SQLEXPRESS;Database=HotelDB;" +
+                optionsBuilder.UseSqlServer("Server=.;Database=HotelDB;" +
                     "Integrated Security=true;TrustServerCertificate=true;");
             }
         }

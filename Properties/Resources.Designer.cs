@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KursovaHotel.Properties {
+namespace KursovaHotel2.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KursovaHotel.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KursovaHotel.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KursovaHotel2.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace KursovaHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Glavna_stranica {
+        internal static System.Drawing.Bitmap arte_spa_park_hotel_grey {
             get {
-                object obj = ResourceManager.GetObject("Glavna stranica", resourceCulture);
+                object obj = ResourceManager.GetObject("arte-spa-park-hotel-grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

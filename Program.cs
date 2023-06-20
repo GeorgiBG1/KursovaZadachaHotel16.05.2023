@@ -1,7 +1,4 @@
-using KursovaHotel.Business;
-using KursovaHotel.Data;
-
-namespace KursovaHotel
+namespace KursovaHotel2
 {
     internal static class Program
     {
@@ -11,13 +8,10 @@ namespace KursovaHotel
         [STAThread]
         static void Main()
         {
-            HotelDbContext dbContext = new HotelDbContext();
-            HotelBusiness hotelBusiness = new HotelBusiness();
-
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new HotelWinForm());
+            Application.Run(new MainForm());
         }
     }
 }

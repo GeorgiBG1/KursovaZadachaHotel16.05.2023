@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KursovaHotel", "KursovaHotel.csproj", "{477CDD5A-8DE8-4CF6-9114-6725608CB7DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KursovaHotel2", "KursovaHotel2.csproj", "{27392DCC-BD0E-4E6F-BE45-387E5CE5DAD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{477CDD5A-8DE8-4CF6-9114-6725608CB7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{477CDD5A-8DE8-4CF6-9114-6725608CB7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{477CDD5A-8DE8-4CF6-9114-6725608CB7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{477CDD5A-8DE8-4CF6-9114-6725608CB7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27392DCC-BD0E-4E6F-BE45-387E5CE5DAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27392DCC-BD0E-4E6F-BE45-387E5CE5DAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27392DCC-BD0E-4E6F-BE45-387E5CE5DAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27392DCC-BD0E-4E6F-BE45-387E5CE5DAD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E5706DD6-CB53-411B-B043-7220ABA08929}
+		SolutionGuid = {DCE4FFBD-E5D1-4D02-B5CF-DC1344583667}
 	EndGlobalSection
 EndGlobal

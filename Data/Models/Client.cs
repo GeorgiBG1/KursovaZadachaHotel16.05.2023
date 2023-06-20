@@ -20,9 +20,9 @@ namespace KursovaHotel.Data.Models
         public string? PhoneNumber { get; set; }
         [ForeignKey("Reservation")]
         public int ReservationId { get; set; }
+        public virtual Reservation? Reservation { get; set; }
         [ForeignKey("Room")]
-        [Required]
         public int RoomId { get; set; }
-        public virtual ICollection<Room>? Rooms { get; set; }
+        public virtual Room? Room { get; set; }
     }
 }

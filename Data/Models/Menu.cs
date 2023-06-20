@@ -13,13 +13,13 @@ namespace KursovaHotel.Data.Models
         public int Id { get; set; }
         [ForeignKey("MenyVariety")]
         public int MenuVarietyId { get; set; }
-        public virtual ICollection<MenuVariety>? MenuVarieties { get; set; }
+        public virtual MenuVariety? MenuVariety { get; set; }
         [ForeignKey("MenuOption")]
         public int MenuOptionId { get; set; }
-        public virtual ICollection<MenuOption>? MenuOptions { get; set; }
+        public virtual MenuOption? MenuOption { get; set; }
         [ForeignKey("Reservation")]
         public int ReservationId { get; set; }
-        public virtual ICollection<Reservation>? Reservations { get; set; }
+        public virtual Reservation? Reservation { get; set; }
         public decimal Price { get; set; }
         public DateTime Date { get; set; }
     }
